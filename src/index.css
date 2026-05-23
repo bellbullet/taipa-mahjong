@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #091509;
+  color: #c8e8c8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+button:focus, input:focus {
+  outline: none;
+}
+
+/* スクロールバーをダークテーマに */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #091509;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a1e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e5a2e;
+}
