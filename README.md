@@ -9,20 +9,20 @@
 - **マッチ制**: 先取 1/3/5 本を選択可能
 - **得点システム**: 連番+2 / 同数+1 / リーチ+1 / ドラ+1/枚 / 早上がり+1
 
------
+---
 
 ## 🚀 セットアップ手順
 
 ### 1. Firebase プロジェクト作成
 
 1. [Firebase Console](https://console.firebase.google.com/) で「プロジェクトを追加」
-1. プロジェクト名を入力（例: `taipa-mahjong`）→ Google Analytics は無効でOK → 作成
-1. 左メニュー「**構築** → **Realtime Database**」→「データベースを作成」
-- ロケーション: `asia-southeast1`（シンガポール、東京近い）または `us-central1`
-- セキュリティルール: **「テストモードで開始」**を選択（後で変更）
-1. 左メニュー「**プロジェクト設定**（歯車）」→ 一番下「**マイアプリ**」→ **`</>`（Web）**を選択
-1. アプリ名（例: `taipa-mahjong-web`）入力 → Firebase Hosting は不要 → 登録
-1. 表示される `firebaseConfig` の値をコピー（後で使う）
+2. プロジェクト名を入力（例: `taipa-mahjong`）→ Google Analytics は無効でOK → 作成
+3. 左メニュー「**構築** → **Realtime Database**」→「データベースを作成」
+   - ロケーション: `asia-southeast1`（シンガポール、東京近い）または `us-central1`
+   - セキュリティルール: **「テストモードで開始」**を選択（後で変更）
+4. 左メニュー「**プロジェクト設定**（歯車）」→ 一番下「**マイアプリ**」→ **`</>`（Web）**を選択
+5. アプリ名（例: `taipa-mahjong-web`）入力 → Firebase Hosting は不要 → 登録
+6. 表示される `firebaseConfig` の値をコピー（後で使う）
 
 ### 2. セキュリティルール設定（推奨）
 
@@ -62,7 +62,7 @@ cp .env.example .env
 npm run dev
 ```
 
-ブラウザで <http://localhost:5173> を開いて動作確認。
+ブラウザで http://localhost:5173 を開いて動作確認。
 
 ### 4. GitHub にプッシュ
 
@@ -82,21 +82,21 @@ git push -u origin main
 ### 5. Vercel デプロイ
 
 1. [Vercel](https://vercel.com/) にログイン（GitHub アカウントで）
-1. 「**Add New Project**」→ 先ほどの GitHub リポジトリを **Import**
-1. **Framework Preset**: `Vite` が自動選択される
-1. 「**Environment Variables**」セクションを開いて、`.env` の中身を**全部**追加:
-- `VITE_FIREBASE_API_KEY`
-- `VITE_FIREBASE_AUTH_DOMAIN`
-- `VITE_FIREBASE_DATABASE_URL`
-- `VITE_FIREBASE_PROJECT_ID`
-- `VITE_FIREBASE_STORAGE_BUCKET`
-- `VITE_FIREBASE_MSG_SENDER_ID`
-- `VITE_FIREBASE_APP_ID`
-1. 「**Deploy**」ボタン
+2. 「**Add New Project**」→ 先ほどの GitHub リポジトリを **Import**
+3. **Framework Preset**: `Vite` が自動選択される
+4. 「**Environment Variables**」セクションを開いて、`.env` の中身を**全部**追加:
+   - `VITE_FIREBASE_API_KEY`
+   - `VITE_FIREBASE_AUTH_DOMAIN`
+   - `VITE_FIREBASE_DATABASE_URL`
+   - `VITE_FIREBASE_PROJECT_ID`
+   - `VITE_FIREBASE_STORAGE_BUCKET`
+   - `VITE_FIREBASE_MSG_SENDER_ID`
+   - `VITE_FIREBASE_APP_ID`
+5. 「**Deploy**」ボタン
 
 数十秒で `https://taipa-mahjong-xxx.vercel.app` 形式のURLが発行される。完了。
 
------
+---
 
 ## 🛠 開発コマンド
 
@@ -125,7 +125,6 @@ taipa-mahjong/
 ## 💰 コストの目安
 
 Firebase Realtime Database **Spark プラン（無料）**:
-
 - 同時接続: 100
 - ストレージ: 1 GB
 - ダウンロード: 10 GB/月
@@ -133,7 +132,6 @@ Firebase Realtime Database **Spark プラン（無料）**:
 → **個人＋友人数人で遊ぶ範囲なら一生無料圏内**。万一を超えたら Blaze プラン（従量課金）に切り替えるだけ。
 
 Vercel **Hobby プラン（無料）**:
-
 - 帯域: 100 GB/月
 - ビルド: 6000分/月
 
@@ -142,18 +140,15 @@ Vercel **Hobby プラン（無料）**:
 ## 🔧 トラブルシューティング
 
 **Q. デプロイ後にオンライン対戦で「接続エラー」が出る**
-
 - Vercel の Environment Variables が全部設定されているか確認
 - Firebase の Realtime Database セキュリティルールが「公開」されているか確認
 - Vercel で **Redeploy** が必要（環境変数変更後）
 
 **Q. ローカルで動くがビルドで失敗する**
-
 - `.env` の値が全部入っているか確認
 - 改行や余分なスペースが入っていないか確認
 
 **Q. 古いルームが残っている**
-
 - 起動時に1時間以上経過したルームは自動削除
 - 手動で消すなら Firebase Console から `rooms/` ノードを削除
 
@@ -161,6 +156,6 @@ Vercel **Hobby プラン（無料）**:
 
 個人利用は自由。
 
------
+---
 
 🎉 楽しんでください！
